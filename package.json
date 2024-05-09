@@ -1,0 +1,16 @@
+{
+  "name": "yandex-google-data",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install_modules": "npm i && cd ./backend && npm i && cd ../frontend && npm i",
+    "frontend_serve": "cd ./frontend && npm run serve",
+    "frontend_build": "cd ./frontend && npm run build",
+    "frontend_lint": "cd ./frontend && npm run lint",
+    "server": "cd ./backend && node server.js",
+    "dev": "npm-run-all -p server frontend_serve"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
