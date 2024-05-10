@@ -5,9 +5,10 @@
   </nav>
   <router-view/>
   <h3>Дочерние проекты</h3>
-  <ul v-for="(project, index) in projects" :key="index">
-    <li><a :href="project.link" target="_blank" rel="noopener">{{ project.name }}</a></li>
+  <ul>
+    <li v-for="(project, index) in projects" :key="index"><a :href="project.link" target="_blank" rel="noopener">{{ project.name }}</a></li>
   </ul>
+  <br><br>
 </template>
 
 <script>
@@ -31,19 +32,17 @@
 </script>
 
 <style lang="scss">
-body{
+html, body, #app {
   margin: 0;
   padding: 0;
-}
-
-#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: 100dvh;
+  height: 100vh;
   width: 100%;
+  box-sizing: border-box;
   position: relative;
 }
 

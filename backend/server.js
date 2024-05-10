@@ -92,13 +92,14 @@ app.get('/api/data/:id', async (req, res) => {
 app.post('/api/data/:id/append', async (req, res) => {
   try {
     const { id } = req.params;
-    const newData = req.body.data;
-    console.log(id, req.body);
+    const newData = [Object.values(req.body.params)];
     const table = await DataModel.findById(id);
 
     if (!table) throw new Error("Нет такого листа или таблицы");
 
     const appendState = await tools.appendDataInGoogleSheet(table.tableId, table.sheetName, newData);
+
+    console.log(appendState);
 
     if (!appendState.state){
       if(appendState.message == 'Ошибка при получение данных с таблицы: The caller does not have permission') throw new Error('Ошибка при получение данных с таблицы: \nПроблемы с доступом таблицы. Проверьте, что она действительно является публичной или ввели правильную ссылку!')
