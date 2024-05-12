@@ -67,7 +67,6 @@ app.post('/api/data', async (req, res) => {
 app.get('/api/data/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(id);
     const table = await DataModel.findById(id);
 
     if (!table) throw new Error("Нет такого листа или таблицы");
@@ -79,7 +78,6 @@ app.get('/api/data/:id', async (req, res) => {
       throw new Error(data.message)
     }
     
-
     res.send({ state: true, data: {
       rows: data.data.rows,
     } });
@@ -98,8 +96,6 @@ app.post('/api/data/:id/append', async (req, res) => {
     if (!table) throw new Error("Нет такого листа или таблицы");
 
     const appendState = await tools.appendDataInGoogleSheet(table.tableId, table.sheetName, newData);
-
-    console.log(appendState);
 
     if (!appendState.state){
       if(appendState.message == 'Ошибка при получение данных с таблицы: The caller does not have permission') throw new Error('Ошибка при получение данных с таблицы: \nПроблемы с доступом таблицы. Проверьте, что она действительно является публичной или ввели правильную ссылку!')
@@ -120,7 +116,8 @@ const server = app.listen(PORT, async () => {
       ip += chunk;
     });
     res.on('end', () => {
-      host = `http://${ip}:${port}`
+      host = `http://${ip}:${port}/api`
+      console.log("Developed by Vkidik\nTelegram: https://t.me/vkidik/")
       console.log(`Сервер запущен на адресе ${host}\n`);
     });
   }).on('error', (err) => {

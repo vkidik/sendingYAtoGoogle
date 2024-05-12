@@ -18,16 +18,19 @@
       return{
         projects: [
           {
-            name: "Сайт-визитка vkidik.ru",
-            link: "https://vkidik.ru"
+            name: "Яндекс Формы",
+            link: "https://forms.yandex.ru/"
           },
           {
-            name: "Музыкальная платформа Pace Music",
-            link: "https://pacemusic.ru"
+            name: "Google Таблицы",
+            link: "https://docs.google.com/spreadsheets/"
           }
         ]
       }
-    }
+    },
+    mounted() {
+      console.log("Developed by Vkidik\nTelegram: https://t.me/vkidik/")
+    },
   }
 </script>
 

@@ -4,7 +4,7 @@
     <p>Это ознакомительная страница для подключения Yandex Форм к Google Sheets(таблиц, excel)</p>
   </div>
 
-  <a href="https://t.me/vkidik" class="creator">tg: @vkidik</a>
+  <a href="https://t.me/vkidik" class="creator">Telegram: @vkidik</a>
 </template>
 
 <script>
