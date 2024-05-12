@@ -2,7 +2,7 @@ const axios = require('axios')
 
 class APITools{
     constructor(){
-        this.apiDomen = 'https://ya.ecit.ru/api'
+        this.apiDomen = 'https://ya.ecit.ru/'
     }
 
     async fetchData(endpoint, method, body = {}) {
