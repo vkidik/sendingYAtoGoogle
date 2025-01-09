@@ -29,7 +29,7 @@
       }
     },
     mounted() {
-      console.log("Developed by Vkidik\nTelegram: https://t.me/vkidik/")
+      console.log("Developed by Vkidik\nTelegram: https://t.me/young_vykqq/")
     },
   }
 </script>
