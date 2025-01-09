@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const { Buffer } = require('buffer');
 
-const host = 'https://ya.ecit.ru';
+const host = 'https://example.com';
 
 const app = express();
 
@@ -136,7 +136,7 @@ const server = app.listen(PORT, async () => {
     });
     res.on('end', () => {
       host = `http://${ip}:${port}/api`
-      console.log("Developed by Vkidik\nTelegram: https://t.me/vkidik/")
+      console.log("Developed by Vkidik\nTelegram: https://t.me/young_vykqq/")
       console.log(`Сервер запущен на адресе ${host}\n`);
     });
   }).on('error', (err) => {
